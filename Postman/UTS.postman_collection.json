@@ -1,0 +1,162 @@
+{
+  "info": {
+    "_postman_id": "d5814dfa-1e3e-4c63-a875-6f89017712a3",
+    "name": "UTS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58533485",
+    "_collection_link": "https://go.postman.co/collection/58533485-d5814dfa-1e3e-4c63-a875-6f89017712a3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Seluruh_Jadwal",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/jadwalkuliah?search=web&sortBy=course_name&order=asc&order=desc",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "jadwalkuliah"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "web"
+            },
+            {
+              "key": "sortBy",
+              "value": "course_name"
+            },
+            {
+              "key": "order",
+              "value": "asc"
+            },
+            {
+              "key": "order",
+              "value": "desc"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"course_name\": \"Pemrograman Web\",\r\n    \"day\": \"Senin\",\r\n    \"start_time\": \"08:30\",\r\n    \"room\": \"Lab Komputer 1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/jadwalkuliah",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "jadwalkuliah"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Mencari_Jadwal",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/jadwalkuliah/6af8043302d91a6a93b91aa5",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "jadwalkuliah",
+            "6af8043302d91a6a93b91aa5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"course_name\": \"Pemrograman Web Lanjut\",\r\n    \"day\": \"Selasa\",\r\n    \"start_time\": \"10:00\",\r\n    \"room\": \"Lab Komputer 2\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/jadwalkuliah/6af8043302d91a6a93b91aa5",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "jadwalkuliah",
+            "6af8043302d91a6a93b91aa5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Hapus_Jadwal",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/jadwalkuliah/6af8043302d91a6a93b91aa5",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "jadwalkuliah",
+            "6af8043302d91a6a93b91aa5"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

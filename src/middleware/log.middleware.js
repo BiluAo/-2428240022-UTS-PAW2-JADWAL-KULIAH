@@ -1,15 +1,18 @@
-export const logMiddleware = (req, res, next) => {
-  const timeStart = Date.now()
+const logMiddleware = (req, res, next) => {
+  const timeStart = new Date();
 
   res.on('finish', () => {
-    const timeEnd = Date.now()
+    const timeEnd = new Date();
+    const duration = timeEnd - timeStart;
 
     console.log({
-      timeStart,
-      timeEnd,
-      duration: `${timeEnd - timeStart} ms`,
-    })
-  })
+      timeStart: timeStart.toISOString(),
+      timeEnd: timeEnd.toISOString(),
+      duration: `${duration}ms`,
+    });
+  });
 
-  next()
-}
+  next();
+};
+
+export default logMiddleware;

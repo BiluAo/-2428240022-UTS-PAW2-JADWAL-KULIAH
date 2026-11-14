@@ -1,31 +1,29 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
-const JadwalSchema =  new mongoose.Schema(
-    {
-        course_name:{
-            type:String,
-            require: true,
-            unique: true,
-        },
-        day:{
-            type:String,
-            require:true,
-            unique:true,
-        },
-        start_time:{
-            type:String,
-            require:true,
-            unique:true,
-        },
-        room:{
-            type:String,
-            require:true,
-            unique:true,
-        },
+const schema = new mongoose.Schema(
+  {
+    course_name: {
+      type: String,
+      required: true,
     },
-    {
-        timestamps: true,
-    }
-)
-const JadwalModel = mongoose.model('jadwal',JadwalSchema)
-export default JadwalSchema
+    day: {
+      type: String,
+      required: true,
+      enum: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'],
+    },
+    start_time: {
+      type: String,
+      required: true,
+    },
+    room: {
+      type: String,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const JadwalModel = mongoose.model('jadwal', schema);
+export default JadwalModel;
